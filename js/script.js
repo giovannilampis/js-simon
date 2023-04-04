@@ -22,12 +22,32 @@ const inputCell = document.getElementsByTagName('input');
 
 const submitNumbers = document.getElementById("submit-numbers");
 
-//Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
+
+function playGame() {
+
+    while( randomNumbersContainer.length < howManyRandomNumbers ) {
+
+        let randomNumber = createRandomNumber(1, 100);
+
+        if( !randomNumbersContainer.includes( randomNumber ) ) {
+            randomNumbersContainer.push(randomNumber);
+        }
+
+    }
+
+}
+
+submitNumbers.addEventListener("click", function() {
+    playGame();
+    console.log(playGame())
+})
+
+console.log(randomNumbersContainer[0]);
 
 
 // this function will be called to generate random numbers between a maximum and a minimum
 
-function randomCreateNumber(min, max) {
+function createRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
