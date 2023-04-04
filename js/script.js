@@ -32,7 +32,11 @@ const guessedNumbers = [];
 
 // get the alert classed div in html (game response)
 
-const alert = document.querySelector(".alert");
+const alertHtml = document.querySelector(".alert");
+
+// add setTimeout to make random numbers disappear at some point
+
+const timer = setTimeout( resetAll, timeToMemorize * 1000 )
 
 
 
@@ -58,6 +62,12 @@ function playGame() {
         }
 
     }
+
+}
+
+// a function will make disappear the random numbers
+
+const resetAll() {
 
 }
 
