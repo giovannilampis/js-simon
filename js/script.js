@@ -1,6 +1,6 @@
 "use strict"
 
-// Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi. ---- const init()
+// Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi. ---- const initialization()
 
 // Dopo 30 secondi i numeri scompaiono ---- resetAll()
 
@@ -9,20 +9,7 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati ---- showResult();
 
 
-
-// create a variable corresponding to the amount of 
-// random numbers that will appear in the game
-
-const howManyRandomNumbers = 5;
-
-// I create array that will accommodate the random numbers
-
 let randomNumbersContainer = [];
-
- /* I create a variable which corresponds to the time available 
-    to be able to study the random numbers to memorize */
-
-let timeToMemorize = 6;
 
 // create a variable that expresses the numbers written by user during the game
 
@@ -46,56 +33,69 @@ const alertHtml = document.querySelector(".alert");
 
 // initialization
 
-const init() {
+function initialization() {
 
-    // add setTimeout to make random numbers disappear at some point
+    // a variable corresponds to the time available to study the random numbers to memorize //
 
-    const timer = setTimeout( resetAll, timeToMemorize * 1000 );
+    let timeToMemorize = 6;
 
-}
+    const min = 1;
 
-function playGame() {
+    const max = 100;
 
-    let lista = document.getElementById("lista");
+    let counter = 0;
 
-    // the amount of created number must match howManyNumbers
-
-    while( randomNumbersContainer.length < howManyRandomNumbers ) {
+    while(randomNumbersContainer.length < 5) {
 
         // declare the variable corresponding to the randomly created number
 
-        let randomNumber = createRandomNumber(1, 100);
+        const randomNumber = createRandomNumber(min, max);
 
-        // if not already present, the extracted number is pushed into the array containing the extracted numbers
+        // if not already present, the random number is pushed into the array containing the extracted numbers
 
         if( !randomNumbersContainer.includes( randomNumber ) ) {
 
             randomNumbersContainer.push(randomNumber);
 
-            
+            // randomNumber will be printed in HTML
+
+            inputCells[counter].value = randomNumber;
+
+            // counter value increases by one
+
+            counter++;
+
         }
 
     }
 
+    console.log(randomNumbersContainer);
+
+    // add setTimeout to make random numbers disappear at some point
+
+    // const timer = setTimeout( resetAll, timeToMemorize * 1000 );
+
 }
+
+initialization();
 
 // a function will make disappear the random numbers
 
-const resetAll() {
+// const resetAll() {
 
-}
+// }
 
 // ADD EVENT LISTENER
 
-submitNumbers.addEventListener("click", handleClick );
+// submitNumbers.addEventListener("click", handleClick );
 
 // function handleClick
 
-function handleClick();
+// function handleClick();
 
 // function showResult;
 
-function showResult();
+// function showResult();
 
 
 
