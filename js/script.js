@@ -28,3 +28,11 @@ let timeToMemorize = 6;
 const submitNumbers = document.getElementById("submit-numbers");
 
 //Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+
+
+
+// this function will be called to generate random numbers between a maximum and a minimum
+
+function randomCreateNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
