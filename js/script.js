@@ -26,24 +26,35 @@ const submitNumbers = document.getElementById("submit-numbers");
 
 function playGame() {
 
+    let lista = document.getElementById("lista");
+
+    // the amount of created number must match howManyNumbers
+
     while( randomNumbersContainer.length < howManyRandomNumbers ) {
+
+        // declare the variable corresponding to the randomly created number
 
         let randomNumber = createRandomNumber(1, 100);
 
+        // if not already present, the extracted number is pushed into the array containing the extracted numbers
+
         if( !randomNumbersContainer.includes( randomNumber ) ) {
+
             randomNumbersContainer.push(randomNumber);
+
+            
         }
 
     }
 
 }
 
+// ADD EVENT LISTENER
+
 submitNumbers.addEventListener("click", function() {
     playGame();
     console.log(playGame())
 })
-
-console.log(randomNumbersContainer[0]);
 
 
 // this function will be called to generate random numbers between a maximum and a minimum
