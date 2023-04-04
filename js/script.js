@@ -1,6 +1,6 @@
 "use strict"
 
-// I create a variable corresponding to the amount of 
+// create a variable corresponding to the amount of 
 // random numbers that will appear in the game
 
 const howManyRandomNumbers = 5;
@@ -13,6 +13,10 @@ let randomNumbersContainer = [];
     to be able to study the random numbers to memorize */
 
 let timeToMemorize = 6;
+
+// create a variable that expresses the numbers written by user during the game
+
+const userNumbers = [];
 
 // I get the input elements in which the player visualizes and enters the numbers
 
