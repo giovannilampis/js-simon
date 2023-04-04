@@ -30,6 +30,10 @@ const submitNumbers = document.getElementById("submit-numbers");
 
 const guessedNumbers = [];
 
+// get the alert classed div in html (game response)
+
+const alert = document.querySelector(".alert");
+
 
 
 function playGame() {
