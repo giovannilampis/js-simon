@@ -18,13 +18,17 @@ let timeToMemorize = 6;
 
 const userNumbers = [];
 
-// I get the input elements in which the player visualizes and enters the numbers
+// get the input elements in which the player visualizes and enters the numbers
 
-const inputCell = document.getElementsByTagName('input');
+const inputCells = document.getElementsByTagName('input');
 
-// I take the button by clicking which the player enters the numbers
+// get the button by clicking which the player enters the numbers
 
 const submitNumbers = document.getElementById("submit-numbers");
+
+// a variable expresses the right answers of the userbduring the game
+
+const guessedNumbers = [];
 
 
 
