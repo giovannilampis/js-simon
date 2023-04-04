@@ -1,0 +1,23 @@
+/* COLOR VARIABLES */
+
+:root {
+
+}
+
+/* GENERAL*/
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.debug {
+    border: 2px dashed turquoise;
+}
+
+img {
+    width: 100%;
+}
