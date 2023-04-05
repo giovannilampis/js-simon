@@ -29,6 +29,12 @@ const submitNumbers = document.getElementById("submit-numbers");
 
 const alertHtml = document.querySelector(".alert");
 
+
+// ADD EVENT LISTENER
+
+submitNumbers.addEventListener("click", handleClick );
+
+
 // initialization
 
 function initialization() {
@@ -102,10 +108,6 @@ function resetAll() {
 
  }
 
-// ADD EVENT LISTENER
-
-submitNumbers.addEventListener("click", handleClick );
-
 function handleClick() {
 
     for(let i = 0; i < inputCells.length; i++) {
@@ -125,15 +127,17 @@ function handleClick() {
         }
 
     }
+
     console.log(userNumbers);
 }
+
 
 // a function will do a comparison between the two Arrays: randomNumbersContainer and userNumbers
 // the result of this comparison will be shown in HTML
 
 function showResult() {
 
-    // a variable expresses the right answers of the userbduring the game
+    // a variable expresses the right answers of the user during the game
 
     const guessedNumbers = [];
 
@@ -150,9 +154,6 @@ function showResult() {
     console.log(guessedNumbers);
 
 }
-
-// function showResult();
-
 
 
 // this function will be called to generate random numbers between a maximum and a minimum
