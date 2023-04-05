@@ -25,6 +25,10 @@ const inputCells = document.getElementsByTagName('input');
 
 const submitNumbers = document.getElementById("submit-numbers");
 
+// get the button that will make it possible to start a new game
+
+const newGame = document.getElementById("new-game");
+
 
 // ADD EVENT LISTENER
 
@@ -123,6 +127,10 @@ function handleClick() {
         }
 
     }
+
+    submitNumbers.className = "d-none";
+
+    newGame.className = "d-block";
 
     showResult();
 }
