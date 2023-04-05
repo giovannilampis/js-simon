@@ -30,9 +30,27 @@ const submitNumbers = document.getElementById("submit-numbers");
 const newGame = document.getElementById("new-game");
 
 
-// ADD EVENT LISTENER
+// ADD EVENT LISTENER TO SUBMIT NUMBERS
 
 submitNumbers.addEventListener("click", handleClick );
+
+// ADD EVENT LISTENER TO START A NEW GAME
+
+newGame.addEventListener("click", function() {
+
+    newGame.className = "d-none";
+
+    // get the alert classed div in html (game response)
+
+     const alertHtml = document.getElementById("alert");
+
+    alertHtml.innerHTML = "";
+
+    resetAll();
+
+    initialization();
+    
+})
 
 
 // initialization
