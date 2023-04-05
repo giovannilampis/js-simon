@@ -82,29 +82,58 @@ function initialization() {
 initialization();
 
 
-// a function named resetAll will ... 
+// a function named resetAll ... 
 
 function resetAll() {
 
     for(let i = 0; i < inputCells.length; i++) {
 
-        // ... make disappear the random numbers ...
+        // ... will make disappear the random numbers ...
 
         inputCells[i].value = "";
 
-        // ... and will delete the the read-only property from input elements
+        // ... will delete the the read-only property from input elements
 
         inputCells[i].toggleAttribute('readonly');
 
     }
 
+    // and will make the #submit-numbers button appear in html
+
+    submitNumbers.className = "d-block";
+
  }
 
 // ADD EVENT LISTENER
 
-// submitNumbers.addEventListener("click", handleClick );
+submitNumbers.addEventListener("click", handleClick );
 
-// function handleClick
+function handleClick() {
+
+    for(let i = 0; i < inputCells.length; i++) {
+
+        // variable corresponding to the number entered by the user
+
+        let userNum = parseInt( inputCells[i].value );
+
+        // if it doesn't already exist in the array userNumbers, ...
+
+        if(!userNumbers.includes(userNum)) {
+
+            // ... push userNum in the array userNumbers
+
+            userNumbers.push(userNum);
+
+        }
+
+    }
+    console.log(userNumbers);
+}
+
+
+
+
+
 
 // function handleClick();
 

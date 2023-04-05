@@ -21,3 +21,19 @@
 img {
     width: 100%;
 }
+
+#submit-numbers {
+    display: none;
+    /* background-color: green;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.5rem; */
+}
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
