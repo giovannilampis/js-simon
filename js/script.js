@@ -69,21 +69,35 @@ function initialization() {
 
     }
 
-    console.log(randomNumbersContainer);
+    // console.log(randomNumbersContainer);
 
     // add setTimeout to make random numbers disappear at some point
 
-    // const timer = setTimeout( resetAll, timeToMemorize * 1000 );
+    const timer = setTimeout( resetAll, timeToMemorize * 1000 );
 
 }
 
+// init the initialization function
+
 initialization();
 
-// a function will make disappear the random numbers
+// a function named resetAll will ... 
 
-// const resetAll() {
+function resetAll() {
 
-// }
+    for(let i = 0; i < inputCells.length; i++) {
+
+        // ... make disappear the random numbers ...
+
+        inputCells[i].value = "";
+
+        // ... and will delete the the read-only property from input elements
+
+        inputCells[i].toggleAttribute('readonly');
+
+    }
+
+ }
 
 // ADD EVENT LISTENER
 
