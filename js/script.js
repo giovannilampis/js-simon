@@ -81,6 +81,7 @@ function initialization() {
 
 initialization();
 
+
 // a function named resetAll will ... 
 
 function resetAll() {
