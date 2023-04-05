@@ -1,12 +1,14 @@
 "use strict"
 
-// Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi. ---- const initialization()
+// MAIN FUNCTIONS I AM GOING TO NEED
 
-// Dopo 30 secondi i numeri scompaiono ---- resetAll()
+// 1 - Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi. ---- const initialization()
 
-// e l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite delle casella di input ed un bottone ---- handleClick()
+// 2 - Dopo 30 secondi i numeri scompaiono ---- resetAll()
 
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati ---- showResult();
+// 3 - e l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite delle casella di input ed un bottone ---- handleClick()
+
+// 4 - Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati ---- showResult();
 
 
 let randomNumbersContainer = [];
@@ -22,10 +24,6 @@ const inputCells = document.getElementsByTagName('input');
 // get the button by clicking which the player enters the numbers
 
 const submitNumbers = document.getElementById("submit-numbers");
-
-// a variable expresses the right answers of the userbduring the game
-
-const guessedNumbers = [];
 
 // get the alert classed div in html (game response)
 
@@ -82,7 +80,7 @@ function initialization() {
 initialization();
 
 
-// a function named resetAll ... 
+// a function named resetAll ...
 
 function resetAll() {
 
@@ -130,14 +128,28 @@ function handleClick() {
     console.log(userNumbers);
 }
 
+// a function will do a comparison between the two Arrays: randomNumbersContainer and userNumbers
+// the result of this comparison will be shown in HTML
 
+function showResult() {
 
+    // a variable expresses the right answers of the userbduring the game
 
+    const guessedNumbers = [];
 
+    for (let i = 0; i < userNumbers.length; i++) {
 
-// function handleClick();
+        if( randomNumbersContainer.includes(userNumbers[i]) ) {
 
-// function showResult;
+            guessedNumbers.push(userNumbers[i]);
+
+        }
+
+    }
+
+    console.log(guessedNumbers);
+
+}
 
 // function showResult();
 
