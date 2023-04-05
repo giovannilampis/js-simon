@@ -25,10 +25,6 @@ const inputCells = document.getElementsByTagName('input');
 
 const submitNumbers = document.getElementById("submit-numbers");
 
-// get the alert classed div in html (game response)
-
-const alertHtml = document.querySelector(".alert");
-
 
 // ADD EVENT LISTENER
 
@@ -128,7 +124,7 @@ function handleClick() {
 
     }
 
-    console.log(userNumbers);
+    showResult();
 }
 
 
@@ -141,6 +137,10 @@ function showResult() {
 
     const guessedNumbers = [];
 
+    // get the alert classed div in html (game response)
+
+    const alertHtml = document.getElementById("alert");
+
     for (let i = 0; i < userNumbers.length; i++) {
 
         if( randomNumbersContainer.includes(userNumbers[i]) ) {
@@ -152,6 +152,10 @@ function showResult() {
     }
 
     console.log(guessedNumbers);
+
+    alertHtml.innerHTML = `I numeri che hai ricordato correttamente sono: ${guessedNumbers}`;
+
+    alertHtml.className = "d-block";
 
 }
 
