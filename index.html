@@ -15,24 +15,31 @@
 </head>
 <body>
 
-    <section class="text-center my-4">
-        <input min="0" max="100" type="number" name="index0" readonly>
-        <input min="0" max="100" type="number" name="index1" readonly>
-        <input min="0" max="100" type="number" name="index2" readonly>
-        <input min="0" max="100" type="number" name="index3" readonly>
-        <input min="0" max="100" type="number" name="index4" readonly>
-    </section>
+    <div class="game-container">
 
-    <a id="submit-numbers" class="btn btn-info" href="#">Inserisci i numeri che hai visto</a>
+        <p class="text-center pt-3 fs-3"><em>Repository JS-SIMON</em></p>
 
-    <div id="alert" class="d-none">
-        esito del gioco
+        <p class="text-center fs-5">Try to remember the numbers you'll see inside the cells</p>
+
+        <section class="text-center  py-4">
+            <input min="0" max="100" type="number" name="index0" readonly>
+            <input min="0" max="100" type="number" name="index1" readonly>
+            <input min="0" max="100" type="number" name="index2" readonly>
+            <input min="0" max="100" type="number" name="index3" readonly>
+            <input min="0" max="100" type="number" name="index4" readonly>
+        </section>
+    
+        <button id="submit-numbers" href="#">Inserisci i numeri che hai visto</button>
+    
+        <div id="alert" class="d-none">
+            Esito del gioco
+        </div>
+    
+        <button id="new-game" class="d-none btn btn-red" href="#">Mettiti di nuovo alla prova</a>
+
     </div>
 
-    <a id="new-game" class="d-none btn btn-info"" href="#">Mettiti di nuovo alla prova</a>
-
-
     <script src="./js/script.js"></script>
-    
+
 </body>
 </html>

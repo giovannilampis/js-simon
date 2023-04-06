@@ -18,8 +18,24 @@
     border: 2px dashed turquoise;
 }
 
+body {
+    background-color: #f25f4c;
+}
+
+.game-container {
+    width: 45rem;
+    aspect-ratio: 5 / 2;
+    margin: 3rem auto;
+    background-color: #fffffe;
+    border-radius: 2rem;
+}
+
 img {
     width: 100%;
+}
+
+p:first-child {
+    color: #f25f4c;
 }
 
 #submit-numbers {
@@ -36,4 +52,19 @@ img {
 
 .d-none {
     display: none;
+}
+
+button {
+    padding: 0.3rem 0.5rem;
+    text-decoration: none;
+    background-color: #e53170;
+    color: #fffffe;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 0 auto;
+}
+
+#alert {
+    text-align: center;
+    padding-bottom: 2rem;
 }
