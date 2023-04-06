@@ -153,16 +153,22 @@ function showResult() {
 
     }
 
+    // possible messages regarding the results of the game
+
     if (guessedNumbers.length == 0) {
 
+        // only wrong answers
         alertHtml.innerHTML = `you must certainly improve your memory: you have not remembered any number 👎`;
 
     } else if (guessedNumbers.length == 5) {
 
+        // only correct answers
         alertHtml.innerHTML = `you have an amazing memory: you remembered all the numbers 😻`
 
+        // correct answers
     } else { alertHtml.innerHTML = `the numbers you remembered correctly are ✌️: ${guessedNumbers}`}
 
+    // let alert classed element to be visible in the page
     alertHtml.className = "d-block";
 
 }
@@ -208,17 +214,29 @@ function resetAll() {
         // the result of the just finished game disappears
     
         alertHtml.innerHTML = "";
+
+        // empty the array randomNumbersContainer
     
         randomNumbersContainer.length = 0
+
+        // empty the array userNumbers
     
         userNumbers.length = 0
+
+        // empty the array guessedNumbers
     
         guessedNumbers.length = 0
 
+        // get #message-remember in html
+
         const messageRemember = document.getElementById("message-remember");
 
+        // make #message-remember disapeear from the page
+
         messageRemember.className = "d-block";
-        
+
+        // let there be more fun with a new game
+
         initialization();
     
     }

@@ -1,10 +1,12 @@
 /* COLOR VARIABLES */
 
 :root {
-
+    --orange: #f25f4c;
+    --fucsia: #e53170;
+    --white: #fffffe;
 }
 
-/* GENERAL*/
+/* UTILITIES */
 
 /* reset */
 
@@ -18,32 +20,28 @@
     border: 2px dashed turquoise;
 }
 
+
+/* GENERAL */
+
 body {
-    background-color: #f25f4c;
+    background-color: var(--orange);
 }
 
 .game-container {
     width: 45rem;
     aspect-ratio: 5 / 3;
     margin: 3rem auto;
-    background-color: #fffffe;
+    background-color: var(--white);
     border-radius: 2rem;
 }
 
-img {
-    width: 100%;
-}
 
 p:first-child {
-    color: #f25f4c;
+    color: var(--fucsia);
 }
 
 #submit-numbers {
     display: none;
-    /* background-color: green;
-    color: white;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.5rem; */
 }
 
 .d-block {
@@ -57,14 +55,13 @@ p:first-child {
 button {
     padding: 0.3rem 0.5rem;
     text-decoration: none;
-    background-color: #e53170;
-    color: #fffffe;
+    background-color: var(--fucsia);
+    color: var(--white);
     border-radius: 0.5rem;
     border: none;
     margin: 0 auto;
 }
 
 #alert {
-    text-align: center;
     padding-bottom: 2rem;
 }
