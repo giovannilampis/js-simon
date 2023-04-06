@@ -19,7 +19,7 @@ const userNumbers = [];
 
 // get the input elements in which the player visualizes and enters the numbers
 
-const inputCells = document.getElementsByTagName('input');
+let inputCells = document.getElementsByTagName('input');
 
 // get the button by clicking which the player enters the numbers
 
@@ -200,17 +200,6 @@ function resetAll() {
         guessedNumbers.length = 0
     
         initialization();
-    
-        // get the input elements in which the player visualizes and enters the numbers
-    
-        const inputCells = document.getElementsByTagName('input');
-    
-        // the numbers written by the user in the old game disappear
-    
-        for(let i = 0; i < inputCell.length; i++) {
-        
-            inputCell[i].toggleAttribute('readonly');
-        }
     
     }
 
