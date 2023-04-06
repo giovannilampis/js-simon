@@ -110,9 +110,15 @@ function handleClick() {
 
     }
 
+    // the button #submit-numbers disappears
+
     submitNumbers.className = "d-none";
 
+    // the button #new-game appears
+
     newGame.className = "d-block";
+
+    // call function showResult
 
     showResult();
 }
@@ -143,9 +149,15 @@ function showResult() {
 
     }
 
-    // console.log(guessedNumbers);
+    if (guessedNumbers.length == 0) {
 
-    alertHtml.innerHTML = `I numeri che hai ricordato correttamente sono: ${guessedNumbers}`;
+        alertHtml.innerHTML = `you must certainly improve your memory: you have not remembered any number 👎`;
+
+    } else if (guessedNumbers.length == 5) {
+
+        alertHtml.innerHTML = `you have an amazing memory: you remembered all the numbers 😻`
+
+    } else { alertHtml.innerHTML = `the numbers you remembered correctly are ✌️: ${guessedNumbers}`}
 
     alertHtml.className = "d-block";
 
