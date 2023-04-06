@@ -83,6 +83,10 @@ function initialization() {
 
     const timer = setTimeout( resetAll, timeToMemorize * 1000 );
 
+    const messageRemember = document.getElementById("message-remember");
+
+    setTimeout( function() {messageRemember.className = "d-none"}, timeToMemorize * 1000);
+
 }
 
 // init the initialization function
@@ -210,7 +214,11 @@ function resetAll() {
         userNumbers.length = 0
     
         guessedNumbers.length = 0
-    
+
+        const messageRemember = document.getElementById("message-remember");
+
+        messageRemember.className = "d-block";
+        
         initialization();
     
     }
