@@ -29,6 +29,8 @@ const submitNumbers = document.getElementById("submit-numbers");
 
 const newGame = document.getElementById("new-game");
 
+let guessedNumbers;
+
 
 // ADD EVENT LISTENER TO SUBMIT NUMBERS
 
@@ -36,21 +38,7 @@ submitNumbers.addEventListener("click", handleClick );
 
 // ADD EVENT LISTENER TO START A NEW GAME
 
-newGame.addEventListener("click", function() {
-
-    newGame.className = "d-none";
-
-    // get the alert classed div in html (game response)
-
-     const alertHtml = document.getElementById("alert");
-
-    alertHtml.innerHTML = "";
-
-    resetAll();
-
-    initialization();
-    
-})
+newGame.addEventListener( "click", playAgain ); 
 
 
 // initialization
@@ -91,8 +79,6 @@ function initialization() {
 
     }
 
-    // console.log(randomNumbersContainer);
-
     // add setTimeout to make random numbers disappear at some point
 
     const timer = setTimeout( resetAll, timeToMemorize * 1000 );
@@ -103,28 +89,6 @@ function initialization() {
 
 initialization();
 
-
-// a function named resetAll ...
-
-function resetAll() {
-
-    for(let i = 0; i < inputCells.length; i++) {
-
-        // ... will make disappear the random numbers ...
-
-        inputCells[i].value = "";
-
-        // ... will delete the the read-only property from input elements
-
-        inputCells[i].toggleAttribute('readonly');
-
-    }
-
-    // and will make the #submit-numbers button appear in html
-
-    submitNumbers.className = "d-block";
-
- }
 
 function handleClick() {
 
@@ -161,11 +125,13 @@ function showResult() {
 
     // a variable expresses the right answers of the user during the game
 
-    const guessedNumbers = [];
+    guessedNumbers = [];
 
     // get the alert classed div in html (game response)
 
     const alertHtml = document.getElementById("alert");
+
+    // thanks to a cycle, push into guessedNumbers the numbers the user was able to remember
 
     for (let i = 0; i < userNumbers.length; i++) {
 
@@ -177,7 +143,7 @@ function showResult() {
 
     }
 
-    console.log(guessedNumbers);
+    // console.log(guessedNumbers);
 
     alertHtml.innerHTML = `I numeri che hai ricordato correttamente sono: ${guessedNumbers}`;
 
@@ -186,8 +152,74 @@ function showResult() {
 }
 
 
+// a function named resetAll ...
+
+function resetAll() {
+
+    for(let i = 0; i < inputCells.length; i++) {
+
+        // ... will make disappear the random numbers ...
+
+        inputCells[i].value = "";
+
+        // ... will delete the the read-only property from input elements
+
+        inputCells[i].toggleAttribute('readonly');
+
+    }
+
+    // and will make the #submit-numbers button appear in html
+
+    submitNumbers.className = "d-block";
+
+ }
+
+//  a function allows us to play again
+
+ function playAgain() {
+
+       // the #new-game button is not visible anymore
+    
+        newGame.className = "d-none";
+    
+        // empty the input boxes where the user had entered the numbers
+    
+        resetAll();
+    
+        // get the alert classed div in html (game response)
+        const alertHtml = document.getElementById("alert");
+    
+        // the result of the just finished game disappears
+    
+        alertHtml.innerHTML = "";
+    
+        randomNumbersContainer.length = 0
+    
+        userNumbers.length = 0
+    
+        guessedNumbers.length = 0
+    
+        initialization();
+    
+        // get the input elements in which the player visualizes and enters the numbers
+    
+        const inputCells = document.getElementsByTagName('input');
+    
+        // the numbers written by the user in the old game disappear
+    
+        for(let i = 0; i < inputCell.length; i++) {
+        
+            inputCell[i].toggleAttribute('readonly');
+        }
+    
+    }
+
+
+
 // this function will be called to generate random numbers between a maximum and a minimum
 
 function createRandomNumber(min, max) {
+
     return Math.floor(Math.random() * (max - min + 1) ) + min;
+
 };
